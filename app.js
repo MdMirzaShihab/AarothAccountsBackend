@@ -27,12 +27,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Routes
-app.use('/api/transactions', transactionRoutes);
-app.use('/api/categories', categoryRoutes);
-app.use('/api/payment-methods', paymentMethodRoutes);
-app.use('/api/reports', reportRoutes);
-app.use('/api/today-reports', todayTransactionRoutes);
-app.use('/api/dashboard', dashboardRoutes);
+app.use('/transactions', transactionRoutes);
+app.use('/categories', categoryRoutes);
+app.use('/payment-methods', paymentMethodRoutes);
+app.use('/reports', reportRoutes);
+app.use('/today-reports', todayTransactionRoutes);
+app.use('/dashboard', dashboardRoutes);
 
 // Error handling middleware
 app.use(errorMiddleware);
