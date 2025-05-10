@@ -1,18 +1,18 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const errorMiddleware = require('./middleware/errorMiddleware');
+const errorMiddleware = require('./src/middleware/errorMiddleware');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 // Import routes
-const transactionRoutes = require('./routes/transactionRoutes');
-const categoryRoutes = require('./routes/categoryRoutes');
-const paymentMethodRoutes = require('./routes/paymentMethodRoutes');
-const reportRoutes = require('./routes/reportRoutes');
-const todayTransactionRoutes = require('./routes/todayTransactionRoutes');
-const dashboardRoutes = require('./routes/dashboardRoutes');
+const transactionRoutes = require('./src/routes/transactionRoutes');
+const categoryRoutes = require('./src/routes/categoryRoutes');
+const paymentMethodRoutes = require('./src/routes/paymentMethodRoutes');
+const reportRoutes = require('./src/routes/reportRoutes');
+const todayTransactionRoutes = require('./src/routes/todayTransactionRoutes');
+const dashboardRoutes = require('./src/routes/dashboardRoutes');
 
 dotenv.config();
 

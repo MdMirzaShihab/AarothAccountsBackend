@@ -36,6 +36,21 @@ const getCategories = asyncHandler(async (req, res) => {
   res.json(categories);
 });
 
+// @desc Get categories by type
+// @route GET /api/categories/type/:type
+// @access Public
+const getCategoriesByType = asyncHandler(async (req, res) => {
+  const { type } = req.params;
+
+  if (!type || !['credit', 'debit'].includes(type)) {
+    res.status(400);
+    throw new Error('Please provide a valid type (credit or debit).');
+  }
+
+  const categories = await Category.find({ type });
+  res.json(categories);
+});
+
 // @desc Update a category
 // @route PUT /api/categories/:id
 // @access Public
@@ -103,6 +118,7 @@ const deleteCategory = asyncHandler(async (req, res) => {
 module.exports = {
   createCategory,
   getCategories,
+  getCategoriesByType,
   updateCategory,
   deleteCategory,
 };
